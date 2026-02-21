@@ -3,232 +3,402 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Anjal Gajurel | Portfolio</title>
-  <meta name="description" content="Minimal, culturally-inflected portfolio of Anjal Gajurel.">
+  <title>Anjal Gajurel — Portfolio</title>
+  <meta name="description" content="Software engineer portfolio — crafted with precision, inspired by uchi.">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js" defer></script>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a class="brand" href="#top">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-text">Anjal Gajurel</span>
+  <!-- ═══ PRELOADER ═══ -->
+  <div id="preloader">
+    <div class="preloader-spinner"></div>
+  </div>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="global-header" role="banner">
+    <div class="header-container uchi-container">
+      <a href="/" class="logo-container" aria-label="Home">
+        <img src="assets/img/ag-monogram.svg" alt="Anjal Gajurel" class="header-logo">
       </a>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact" class="nav-cta">Contact</a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <ul class="menu">
+          <li><a href="#about">about</a></li>
+          <li><a href="#work">work</a></li>
+          <li><a href="#experience">experience</a></li>
+          <li><a href="#skills">skills</a></li>
+          <li><a href="#contact">contact</a></li>
+        </ul>
       </nav>
+      <div class="header-actions">
+        <a href="#contact" class="uchi-btn-bordered reservations-btn">say hello</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span class="hamburger-icon">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy" data-reveal>
-          <p class="eyebrow">Minimalism with quiet heritage</p>
-          <h1>Cybersecurity + software engineering, shaped by Himalayan roots and manga sensibilities.</h1>
-          <p class="hero-script">Calm, precise, poetic engineering.</p>
-          <p class="lead">I design resilient systems and thoughtful interfaces. A calm builder who loves clean code, calligraphic rhythm, and practical security.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="#work">View work</a>
-            <a class="button ghost" href="#contact">Start a project</a>
+  <!-- ═══ SIDE NAV (mobile) ═══ -->
+  <div class="side-nav-overlay" aria-hidden="true"></div>
+  <aside id="slide-nav" class="side-nav" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+    <div class="side-nav-top">
+      <button class="close-nav-btn" aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="side-nav-content has-link-anim">
+      <ul>
+        <li><a href="#about" class="side-nav-link text-xl">about</a></li>
+        <li><a href="#work" class="side-nav-link text-xl">work</a></li>
+        <li><a href="#experience" class="side-nav-link text-xl">experience</a></li>
+        <li><a href="#skills" class="side-nav-link text-xl">skills</a></li>
+        <li><a href="#contact" class="side-nav-link text-xl">contact</a></li>
+      </ul>
+      <div class="side-nav-footer">
+        <a href="https://github.com/anjalgajurel" target="_blank" rel="noopener" class="uchi-btn-text">github</a>
+        <a href="https://linkedin.com/in/anjalgajurel" target="_blank" rel="noopener" class="uchi-btn-text">linkedin</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ═══ MAIN CONTENT ═══ -->
+  <main id="content">
+
+    <!-- ─── HERO ─── -->
+    <section class="uchi-hero">
+      <div class="hero-container uchi-container">
+        <!-- Kanji -->
+        <div class="hero-kanji" aria-hidden="true">
+          <img src="assets/img/kanji.svg" alt="" class="kanji">
+          <span class="kanji-translation">home</span>
+        </div>
+
+        <!-- Logotype -->
+        <img src="assets/img/anjal-gajurel-wordmark.svg" alt="Anjal Gajurel" class="uchi-logotype aos">
+
+        <!-- Gingko leaves -->
+        <img src="assets/img/gingko.svg" alt="" class="gingko gingko-1" aria-hidden="true">
+        <img src="assets/img/gingko.svg" alt="" class="gingko gingko-2" aria-hidden="true">
+        <img src="assets/img/gingko.svg" alt="" class="gingko gingko-3" aria-hidden="true">
+
+        <!-- Hero bottom -->
+        <div class="hero-bottom">
+          <p class="hero-text eyebrow aos">software engineer &amp; creative technologist — building digital experiences with himalayan resilience and samurai precision</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ABOUT / WELCOME ─── -->
+    <section id="about" class="uchi-welcome">
+      <div class="uchi-container">
+        <div class="welcome-row">
+          <div class="col-narrow">
+            <div class="welcome-content">
+              <p class="eyebrow aos">about me</p>
+              <h2 class="h3 anim-lines">a software engineer who believes every line of code should feel intentional</h2>
+              <p class="text-md aos">I'm Anjal Gajurel — a developer who blends the discipline of engineering with a refined eye for design. Born in the foothills of the Himalayas, now crafting digital experiences in the United States. My approach mirrors the philosophy of <em>uchi</em>: every element serves a purpose, nothing is wasted, and the result is greater than the sum of its parts.</p>
+              <a href="#contact" class="uchi-btn-text lg aos">get in touch<svg class="chevron" width="16" height="16" viewBox="0 0 16 16"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+            </div>
           </div>
-          <div class="hero-meta">
-            <span>Euless, Texas</span>
-            <span class="dot" aria-hidden="true"></span>
-            <a href="mailto:anjalgajurel5@gmail.com">anjalgajurel5@gmail.com</a>
+          <div class="col-wide">
+            <div class="welcome-image scale-on-scroll">
+              <img src="assets/img/me.jpg" alt="Anjal Gajurel" loading="lazy">
+            </div>
           </div>
         </div>
-        <div class="hero-art" aria-hidden="true" data-reveal>
-          <div class="prayer-flags"></div>
-          <div class="katana"></div>
-          <div class="hero-frame"></div>
+      </div>
+    </section>
+
+    <!-- ─── WORK ─── -->
+    <section id="work" class="uchi-work">
+      <div class="uchi-container">
+        <div class="section-header">
+          <p class="eyebrow aos">selected work</p>
+          <h2 class="h3 anim-lines">projects crafted with care</h2>
+        </div>
+
+        <div class="work-grid">
+          <!-- Project 1 -->
+          <article class="work-card aos">
+            <div class="work-card-image scale-on-hover">
+              <img src="assets/img/g6mail1.png" alt="G6 Mail" loading="lazy">
+            </div>
+            <div class="work-card-content">
+              <h3 class="h5">g6 mail</h3>
+              <p class="text-sm">Enterprise mail management platform built during my time at Motel 6. Streamlined internal communications and document routing for 1,400+ properties.</p>
+              <div class="work-card-tags">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">AWS</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="work-card aos">
+            <div class="work-card-image scale-on-hover">
+              <img src="assets/img/wordpress.gif" alt="WordPress" loading="lazy">
+            </div>
+            <div class="work-card-content">
+              <h3 class="h5">wordpress sites</h3>
+              <p class="text-sm">Designed and developed custom WordPress themes and restaurant websites, including uchi-inspired designs with GSAP animations, reservation systems, and responsive layouts.</p>
+              <div class="work-card-tags">
+                <span class="tag">WordPress</span>
+                <span class="tag">PHP</span>
+                <span class="tag">GSAP</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="work-card aos">
+            <div class="work-card-image scale-on-hover">
+              <img src="assets/img/honeypot.gif" alt="Honeypot" loading="lazy">
+            </div>
+            <div class="work-card-content">
+              <h3 class="h5">honeypot</h3>
+              <p class="text-sm">Interactive cybersecurity honeypot dashboard for monitoring and analyzing malicious network activity. Real-time threat visualization with geographic mapping.</p>
+              <div class="work-card-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Security</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="work-card aos">
+            <div class="work-card-image scale-on-hover">
+              <img src="assets/img/fedex1.png" alt="FedEx" loading="lazy">
+            </div>
+            <div class="work-card-content">
+              <h3 class="h5">fedex tools</h3>
+              <p class="text-sm">Internal tooling and automation solutions developed during my tenure at FedEx. Improved operational efficiency for package tracking and logistics workflows.</p>
+              <div class="work-card-tags">
+                <span class="tag">Java</span>
+                <span class="tag">Spring</span>
+                <span class="tag">REST</span>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="work" class="section">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <p class="eyebrow">Selected work</p>
-          <h2>Projects with depth and clarity.</h2>
-          <p class="section-lede">A focused set of security, systems, and product projects built with intention.</p>
-        </div>
-        <div class="project-grid">
-          <article class="project-card" data-reveal>
-            <div class="project-top">
-              <p class="project-date">Aug 2021</p>
-              <h3>G6Mail</h3>
-              <p class="project-tags">Python, Flask, Django</p>
-            </div>
-            <p class="project-body">Email client with authentication, attachments, and advanced inbox workflows built for reliability.</p>
-            <a class="project-link" href="https://github.com/Intro-to-SE-Lab-Fall-21/Group-06">View project</a>
-          </article>
-          <article class="project-card" data-reveal>
-            <div class="project-top">
-              <p class="project-date">Mar 2021</p>
-              <h3>WordPress Pentesting</h3>
-              <p class="project-tags">Security, XSS, CSRF</p>
-            </div>
-            <p class="project-body">Recreated real vulnerabilities and documented exploitation paths for common CMS issues.</p>
-            <a class="project-link" href="https://github.com/anjalgajurel/codepath_homework/tree/WordpressVsKali">View project</a>
-          </article>
-          <article class="project-card" data-reveal>
-            <div class="project-top">
-              <p class="project-date">Nov 2020</p>
-              <h3>Honeypot Lab</h3>
-              <p class="project-tags">MHN, Dionaea, Snort</p>
-            </div>
-            <p class="project-body">Deployed multi-node honeynet to capture malware, analyze traffic, and profile targets.</p>
-            <a class="project-link" href="https://github.com/anjalgajurel/codepath_homework/tree/Honeypot">View project</a>
-          </article>
-          <article class="project-card" data-reveal>
-            <div class="project-top">
-              <p class="project-date">Sep 2021</p>
-              <h3>FedEx Frontend</h3>
-              <p class="project-tags">UI, Data diagnostics</p>
-            </div>
-            <p class="project-body">Dashboard for dropbox utilization insights with actionable maintenance flags.</p>
-            <a class="project-link" href="https://github.com/anjalgajurel/fedexFrontend">View project</a>
-          </article>
-        </div>
+    <!-- ─── PARALLAX DIVIDER ─── -->
+    <section class="parallax-divider" aria-hidden="true">
+      <div class="parallax-overlay"></div>
+      <div class="parallax-content uchi-container">
+        <p class="eyebrow">precision in every detail</p>
       </div>
     </section>
 
-    <section id="about" class="section alt">
-      <div class="container about-grid">
-        <div class="about-copy" data-reveal>
-          <p class="eyebrow">About</p>
-          <h2>Builder, researcher, and calm strategist.</h2>
-          <p>I am an introverted extrovert who balances deep focus with collaborative energy. I enjoy soccer, anime, and cooking vegetarian meals. In security and software development, I love the feeling of tracing problems back to their root and crafting elegant solutions.</p>
-          <p>My approach blends quiet discipline with curiosity: learn fast, validate rigorously, and ship with care.</p>
+    <!-- ─── EXPERIENCE ─── -->
+    <section id="experience" class="uchi-experience">
+      <div class="uchi-container">
+        <div class="section-header">
+          <p class="eyebrow aos">experience</p>
+          <h2 class="h3 anim-lines">the journey so far</h2>
         </div>
-        <div class="about-panel" data-reveal>
-          <div class="panel-title">Principles</div>
-          <ul class="principle-list">
-            <li>Clarity beats complexity.</li>
-            <li>Security is a product feature.</li>
-            <li>Craft lives in the details.</li>
-          </ul>
-          <div class="panel-footer">Roots: Nepal. Now: Texas.</div>
-        </div>
-      </div>
-    </section>
 
-    <section id="experience" class="section">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <p class="eyebrow">Experience</p>
-          <h2>Timeline</h2>
-        </div>
         <div class="timeline">
-          <div class="timeline-item" data-reveal>
-            <div class="timeline-year">2023 - Present</div>
+          <article class="timeline-item aos">
+            <div class="timeline-marker"></div>
             <div class="timeline-content">
-              <h3>Central Service Association</h3>
-              <p>Software Developer. Built customer information systems using Java and Play for 250+ utility companies.</p>
+              <p class="eyebrow">2024 — present</p>
+              <h3 class="h5">hai hospitality group</h3>
+              <p class="text-sm timeline-role">wordpress developer</p>
+              <p class="text-sm">Building and maintaining restaurant websites for Uchi, Uchiko, and Uchiba brands. Custom WordPress themes with GSAP animations, reservation integrations, and performance optimization.</p>
             </div>
+          </article>
+
+          <article class="timeline-item aos">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="eyebrow">2023 — 2024</p>
+              <h3 class="h5">motel 6 / g6 hospitality</h3>
+              <p class="text-sm timeline-role">software developer</p>
+              <p class="text-sm">Developed enterprise mail management and internal communication tools serving 1,400+ properties across North America.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item aos">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="eyebrow">2022 — 2023</p>
+              <h3 class="h5">fedex</h3>
+              <p class="text-sm timeline-role">software engineer intern</p>
+              <p class="text-sm">Built internal automation tools and REST APIs for package tracking and logistics optimization. Worked with Java, Spring Boot, and microservices architecture.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item aos">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="eyebrow">2019 — 2023</p>
+              <h3 class="h5">university of memphis</h3>
+              <p class="text-sm timeline-role">b.s. computer science</p>
+              <p class="text-sm">Graduated with focus on software engineering, cybersecurity, and web technologies. Active member of the ACM student chapter.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SKILLS ─── -->
+    <section id="skills" class="uchi-skills">
+      <div class="uchi-container">
+        <div class="section-header">
+          <p class="eyebrow aos">skills</p>
+          <h2 class="h3 anim-lines">tools of the craft</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-group aos">
+            <h3 class="h6">languages</h3>
+            <ul class="skill-list has-link-anim">
+              <li>JavaScript / TypeScript</li>
+              <li>Python</li>
+              <li>Java</li>
+              <li>PHP</li>
+              <li>HTML / CSS / SCSS</li>
+              <li>SQL</li>
+            </ul>
           </div>
-          <div class="timeline-item" data-reveal>
-            <div class="timeline-year">2022 - 2023</div>
-            <div class="timeline-content">
-              <h3>Teklane Solutions</h3>
-              <p>SailPoint Developer. Delivered custom IdentityIQ integrations with ServiceNow.</p>
-            </div>
+          <div class="skill-group aos">
+            <h3 class="h6">frameworks</h3>
+            <ul class="skill-list has-link-anim">
+              <li>React / Next.js</li>
+              <li>Node.js / Express</li>
+              <li>Spring Boot</li>
+              <li>WordPress</li>
+              <li>GSAP / ScrollTrigger</li>
+              <li>Tailwind CSS</li>
+            </ul>
           </div>
-          <div class="timeline-item" data-reveal>
-            <div class="timeline-year">2022</div>
-            <div class="timeline-content">
-              <h3>Mississippi State University</h3>
-              <p>Teaching Assistant for Data Structures and Algorithms.</p>
-            </div>
+          <div class="skill-group aos">
+            <h3 class="h6">tools &amp; platforms</h3>
+            <ul class="skill-list has-link-anim">
+              <li>Git / GitHub</li>
+              <li>Docker</li>
+              <li>AWS / Azure</li>
+              <li>Figma</li>
+              <li>CI/CD Pipelines</li>
+              <li>Linux / Shell</li>
+            </ul>
           </div>
-          <div class="timeline-item" data-reveal>
-            <div class="timeline-year">2021</div>
-            <div class="timeline-content">
-              <h3>Codepath</h3>
-              <p>Technical Support Specialist for web application penetration testing.</p>
-            </div>
-          </div>
-          <div class="timeline-item" data-reveal>
-            <div class="timeline-year">2020 - 2022</div>
-            <div class="timeline-content">
-              <h3>Mississippi State University</h3>
-              <p>B.S. Computer Science, Minor in Mathematics.</p>
-            </div>
+          <div class="skill-group aos">
+            <h3 class="h6">practices</h3>
+            <ul class="skill-list has-link-anim">
+              <li>Responsive Design</li>
+              <li>Accessibility (WCAG)</li>
+              <li>Performance Optimization</li>
+              <li>RESTful APIs</li>
+              <li>Agile / Scrum</li>
+              <li>Testing (Jest, Cypress)</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="section alt">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <p class="eyebrow">Skills</p>
-          <h2>Focused toolkit.</h2>
-        </div>
-        <div class="skills-grid" data-reveal>
-          <span>Python</span>
-          <span>Java</span>
-          <span>Flask</span>
-          <span>Django</span>
-          <span>React</span>
-          <span>SQL</span>
-          <span>Security Testing</span>
-          <span>Network Analysis</span>
-          <span>Linux</span>
-          <span>Git</span>
-          <span>Burp Suite</span>
-          <span>Wireshark</span>
+    <!-- ─── CONTACT / NEWSLETTER ─── -->
+    <section id="contact" class="ur-newsletter dark">
+      <div class="uchi-container">
+        <div class="newsletter-container">
+          <div class="newsletter-left">
+            <p class="eyebrow">let's connect</p>
+            <h2 class="h4 newsletter-title anim-lines">interested in working together?</h2>
+            <p class="text-md">Whether you have a project in mind, want to collaborate, or just want to say hello — I'd love to hear from you.</p>
+          </div>
+          <div class="newsletter-right">
+            <form action="https://formspree.io/f/YOUR_ID" method="POST" class="contact-form has-material-form">
+              <div class="form-group">
+                <input type="text" id="name" name="name" required>
+                <label for="name">your name</label>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" name="email" required>
+                <label for="email">your email</label>
+              </div>
+              <div class="form-group">
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <label for="message">your message</label>
+              </div>
+              <button type="submit" class="uchi-btn-bordered">send message</button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
-      <div class="container contact-grid">
-        <div class="contact-copy" data-reveal>
-          <p class="eyebrow">Contact</p>
-          <h2>Let us build something calm and sharp.</h2>
-          <p>If you have a project, opportunity, or collaboration in mind, I would love to hear it.</p>
-          <div class="social-list">
-            <a href="https://www.linkedin.com/in/anjal-gajurel-031888170/">LinkedIn</a>
-            <a href="https://github.com/anjalgajurel">GitHub</a>
-            <a href="https://www.facebook.com/anjalgajurel/">Facebook</a>
-          </div>
-        </div>
-        <form class="contact-form" method="post" action="https://formspree.io/f/mnqwkylq" data-reveal>
-          <label>
-            <span>Name</span>
-            <input type="text" name="name" required>
-          </label>
-          <label>
-            <span>Email</span>
-            <input type="email" name="email" required>
-          </label>
-          <label>
-            <span>Message</span>
-            <textarea name="message" rows="4" required></textarea>
-          </label>
-          <button type="submit" class="button primary">Send message</button>
-        </form>
-      </div>
-    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>Built with care. Inspired by quiet traditions.</p>
-      <a href="#top" class="back-to-top">Back to top</a>
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="global-footer">
+    <div class="uchi-container">
+      <div class="footer-row">
+        <div class="footer-left">
+          <div class="footer-logo">
+            <img src="assets/img/ag-monogram.svg" alt="Anjal Gajurel">
+          </div>
+          <p class="footer-text text-sm">software engineer crafting digital experiences with intention and precision.</p>
+        </div>
+        <div class="footer-right">
+          <div class="footer-nav">
+            <h4 class="h6">navigate</h4>
+            <ul class="has-link-anim">
+              <li><a href="#about">about</a></li>
+              <li><a href="#work">work</a></li>
+              <li><a href="#experience">experience</a></li>
+              <li><a href="#skills">skills</a></li>
+              <li><a href="#contact">contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav">
+            <h4 class="h6">connect</h4>
+            <ul class="has-link-anim">
+              <li><a href="https://github.com/anjalgajurel" target="_blank" rel="noopener">github</a></li>
+              <li><a href="https://linkedin.com/in/anjalgajurel" target="_blank" rel="noopener">linkedin</a></li>
+              <li><a href="mailto:hello@anjalgajurel.com">email</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="below-footer uchi-container">
+      <p class="text-xs">&copy; 2025 Anjal Gajurel. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Back to top — SVG progress circle -->
+  <div class="progress-wrap" aria-label="Back to top">
+    <svg class="progress-circle" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path class="progress-bg" d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" fill="none" stroke-width="3"/>
+      <path class="progress-path" d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" fill="none" stroke-width="3"/>
+    </svg>
+    <svg class="progress-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M8 13V3M3 8l5-5 5 5"/>
+    </svg>
+  </div>
+
+  <!-- Screen reader live region -->
+  <div id="sr-status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 
   <script src="assets/js/site.js"></script>
 </body>
