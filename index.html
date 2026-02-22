@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Anjal Gajurel — Portfolio</title>
-  <meta name="description" content="Software engineer portfolio — crafted with precision, inspired by uchi.">
+  <title>Anjal Gajurel — Software Developer</title>
+  <meta name="description" content="Software developer and cybersecurity enthusiast — portfolio showcasing projects in full-stack development, identity management, and security research.">
+  <meta name="theme-color" content="#F2E8DE">
 
-  <!-- Fonts -->
+  <!-- Fonts: Inter for body polish, system SF Pro stack for Apple feel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- GSAP -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js" defer></script>
@@ -21,178 +22,186 @@
 <body>
 
   <!-- ═══ PRELOADER ═══ -->
-  <div id="preloader">
-    <div class="preloader-spinner"></div>
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-ring"></div>
   </div>
 
-  <!-- ═══ HEADER ═══ -->
-  <header class="global-header" role="banner">
-    <div class="header-container uchi-container">
-      <a href="/" class="logo-container" aria-label="Home">
-        <img src="assets/img/ag-monogram.svg" alt="Anjal Gajurel" class="header-logo">
+  <!-- ═══ HEADER — frosted glass nav ═══ -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="/" class="header-logo" aria-label="Home">
+        <span class="logo-mark">AG</span>
       </a>
-      <nav class="header-nav" aria-label="Main navigation">
-        <ul class="menu">
-          <li><a href="#about">about</a></li>
-          <li><a href="#work">work</a></li>
-          <li><a href="#experience">experience</a></li>
-          <li><a href="#skills">skills</a></li>
-          <li><a href="#contact">contact</a></li>
+      <nav class="header-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
       <div class="header-actions">
-        <a href="#contact" class="uchi-btn-bordered reservations-btn">say hello</a>
-        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-          <span class="hamburger-icon">
-            <span></span><span></span><span></span>
-          </span>
+        <a href="#contact" class="btn btn-primary btn-sm">Get in Touch</a>
+        <button class="mobile-menu-btn" id="menu-toggle" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- ═══ SIDE NAV (mobile) ═══ -->
-  <div class="side-nav-overlay" aria-hidden="true"></div>
-  <aside id="slide-nav" class="side-nav" aria-hidden="true" role="dialog" aria-label="Navigation menu">
-    <div class="side-nav-top">
-      <button class="close-nav-btn" aria-label="Close menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/>
-        </svg>
+  <!-- ═══ MOBILE NAV ═══ -->
+  <div class="mobile-nav-overlay" id="mobile-overlay"></div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="mobile-nav-header">
+      <button class="mobile-close-btn" id="mobile-close" aria-label="Close menu">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="1" y1="1" x2="17" y2="17"/><line x1="17" y1="1" x2="1" y2="17"/></svg>
       </button>
     </div>
-    <nav class="side-nav-content has-link-anim">
-      <ul>
-        <li><a href="#about" class="side-nav-link text-xl">about</a></li>
-        <li><a href="#work" class="side-nav-link text-xl">work</a></li>
-        <li><a href="#experience" class="side-nav-link text-xl">experience</a></li>
-        <li><a href="#skills" class="side-nav-link text-xl">skills</a></li>
-        <li><a href="#contact" class="side-nav-link text-xl">contact</a></li>
-      </ul>
-      <div class="side-nav-footer">
-        <a href="https://github.com/anjalgajurel" target="_blank" rel="noopener" class="uchi-btn-text">github</a>
-        <a href="https://linkedin.com/in/anjalgajurel" target="_blank" rel="noopener" class="uchi-btn-text">linkedin</a>
-      </div>
-    </nav>
-  </aside>
+    <ul class="mobile-nav-list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-nav-footer">
+      <a href="https://github.com/anjalgajurel" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/anjalgajurel" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </nav>
 
-  <!-- ═══ MAIN CONTENT ═══ -->
-  <main id="content">
+  <!-- ═══ MAIN ═══ -->
+  <main id="main">
 
     <!-- ─── HERO ─── -->
-    <section class="uchi-hero">
-      <div class="hero-container uchi-container">
-        <!-- Kanji -->
-        <div class="hero-kanji" aria-hidden="true">
-          <img src="assets/img/kanji.svg" alt="" class="kanji">
-          <span class="kanji-translation">home</span>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <p class="hero-label stagger-item">Software Developer & Cybersecurity Enthusiast</p>
+          <h1 class="hero-title stagger-item">anjal gajurel</h1>
+          <p class="hero-subtitle stagger-item">Curious coder and problem solver, bringing ideas to life through technology. From building secure systems to crafting elegant interfaces — every line of code serves a purpose.</p>
+          <div class="hero-ctas stagger-item">
+            <a href="#work" class="btn btn-primary">view my work</a>
+            <a href="#contact" class="btn btn-ghost">get in touch</a>
+          </div>
         </div>
-
-        <!-- Logotype -->
-        <img src="assets/img/anjal-gajurel-wordmark.svg" alt="Anjal Gajurel" class="uchi-logotype aos">
-
-        <!-- Gingko leaves -->
-        <img src="assets/img/gingko.svg" alt="" class="gingko gingko-1" aria-hidden="true">
-        <img src="assets/img/gingko.svg" alt="" class="gingko gingko-2" aria-hidden="true">
-        <img src="assets/img/gingko.svg" alt="" class="gingko gingko-3" aria-hidden="true">
-
-        <!-- Hero bottom -->
-        <div class="hero-bottom">
-          <p class="hero-text eyebrow aos">software engineer &amp; creative technologist — building digital experiences with himalayan resilience and samurai precision</p>
+        <div class="hero-visual stagger-item">
+          <div class="hero-image-wrapper">
+            <img src="assets/img/me.jpg" alt="Anjal Gajurel" class="hero-portrait">
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ─── ABOUT / WELCOME ─── -->
-    <section id="about" class="uchi-welcome">
-      <div class="uchi-container">
-        <div class="welcome-row">
-          <div class="col-narrow">
-            <div class="welcome-content">
-              <p class="eyebrow aos">about me</p>
-              <h2 class="h3 anim-lines">a software engineer who believes every line of code should feel intentional</h2>
-              <p class="text-md aos">I'm Anjal Gajurel — a developer who blends the discipline of engineering with a refined eye for design. Born in the foothills of the Himalayas, now crafting digital experiences in the United States. My approach mirrors the philosophy of <em>uchi</em>: every element serves a purpose, nothing is wasted, and the result is greater than the sum of its parts.</p>
-              <a href="#contact" class="uchi-btn-text lg aos">get in touch<svg class="chevron" width="16" height="16" viewBox="0 0 16 16"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+    <!-- ─── ABOUT ─── -->
+    <section id="about" class="section section-alt">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content">
+            <p class="section-label stagger-item">About Me</p>
+            <h2 class="section-title stagger-item">a developer who believes great software feels invisible.</h2>
+            <p class="body-text stagger-item">Born in Nepal, now crafting digital products in the United States. I approach engineering with curiosity and dedication — obsessing over details most people won't consciously notice, but will absolutely feel.</p>
+            <p class="body-text stagger-item">My work spans full-stack development, identity management, cybersecurity, and creative front-end experiences. From building Customer Information Systems for 250+ utility companies to supporting 1,000+ cybersecurity students — I bring the same care to a Java backend as I do to a pixel-perfect interface.</p>
+            <div class="about-stats stagger-item">
+              <div class="stat">
+                <span class="stat-number">250+</span>
+                <span class="stat-label">Companies Served</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">1000+</span>
+                <span class="stat-label">Students Supported</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">6+</span>
+                <span class="stat-label">Projects Shipped</span>
+              </div>
             </div>
           </div>
-          <div class="col-wide">
-            <div class="welcome-image scale-on-scroll">
-              <img src="assets/img/me.jpg" alt="Anjal Gajurel" loading="lazy">
-            </div>
+          <div class="about-image stagger-item">
+            <img src="assets/img/bg.jpg" alt="Workspace" loading="lazy">
           </div>
         </div>
       </div>
     </section>
 
     <!-- ─── WORK ─── -->
-    <section id="work" class="uchi-work">
-      <div class="uchi-container">
-        <div class="section-header">
-          <p class="eyebrow aos">selected work</p>
-          <h2 class="h3 anim-lines">projects crafted with care</h2>
-        </div>
+    <section id="work" class="section">
+      <div class="container">
+        <div class="anim-line" style="margin-bottom: var(--space-xl)"></div>
+        <p class="section-label stagger-item">Selected Work</p>
+        <h2 class="section-title stagger-item">projects that demonstrate process and impact.</h2>
+        <p class="section-subtitle stagger-item">Each project represents end-to-end thinking — from understanding the problem to shipping a polished solution.</p>
 
         <div class="work-grid">
           <!-- Project 1 -->
-          <article class="work-card aos">
-            <div class="work-card-image scale-on-hover">
-              <img src="assets/img/g6mail1.png" alt="G6 Mail" loading="lazy">
+          <article class="project-card stagger-item">
+            <div class="card-media">
+              <img src="assets/img/g6mail1.png" alt="G6 Mail email client" loading="lazy">
             </div>
-            <div class="work-card-content">
-              <h3 class="h5">g6 mail</h3>
-              <p class="text-sm">Enterprise mail management platform built during my time at Motel 6. Streamlined internal communications and document routing for 1,400+ properties.</p>
-              <div class="work-card-tags">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">AWS</span>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Software Engineering</span>
+                <span class="card-year">2021</span>
+              </div>
+              <h3 class="card-title">G6 Mail</h3>
+              <p class="card-description">An email client built with Python, Flask, and Django. Features include secure login, compose and send emails, search and forward, attachments, read/unread tracking, reply chains, and full account management.</p>
+              <div class="card-tags">
+                <span>Python</span><span>Flask</span><span>Django</span><span>Email</span>
               </div>
             </div>
           </article>
 
           <!-- Project 2 -->
-          <article class="work-card aos">
-            <div class="work-card-image scale-on-hover">
-              <img src="assets/img/wordpress.gif" alt="WordPress" loading="lazy">
+          <article class="project-card stagger-item">
+            <div class="card-media">
+              <img src="assets/img/wordpress.gif" alt="WordPress pentesting" loading="lazy">
             </div>
-            <div class="work-card-content">
-              <h3 class="h5">wordpress sites</h3>
-              <p class="text-sm">Designed and developed custom WordPress themes and restaurant websites, including uchi-inspired designs with GSAP animations, reservation systems, and responsive layouts.</p>
-              <div class="work-card-tags">
-                <span class="tag">WordPress</span>
-                <span class="tag">PHP</span>
-                <span class="tag">GSAP</span>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Cybersecurity</span>
+                <span class="card-year">2021</span>
+              </div>
+              <h3 class="card-title">WordPress Pentesting</h3>
+              <p class="card-description">Finding, analyzing, and documenting WordPress vulnerabilities including Authenticated Stored XSS, CSRF in Connection Information, Unauthenticated View of Private Posts, and Username Enumeration.</p>
+              <div class="card-tags">
+                <span>WordPress</span><span>Kali Linux</span><span>OWASP</span><span>Security</span>
               </div>
             </div>
           </article>
 
           <!-- Project 3 -->
-          <article class="work-card aos">
-            <div class="work-card-image scale-on-hover">
-              <img src="assets/img/honeypot.gif" alt="Honeypot" loading="lazy">
+          <article class="project-card stagger-item">
+            <div class="card-media">
+              <img src="assets/img/honeypot.gif" alt="Honeypot network" loading="lazy">
             </div>
-            <div class="work-card-content">
-              <h3 class="h5">honeypot</h3>
-              <p class="text-sm">Interactive cybersecurity honeypot dashboard for monitoring and analyzing malicious network activity. Real-time threat visualization with geographic mapping.</p>
-              <div class="work-card-tags">
-                <span class="tag">Python</span>
-                <span class="tag">Docker</span>
-                <span class="tag">Security</span>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Cybersecurity</span>
+                <span class="card-year">2020</span>
+              </div>
+              <h3 class="card-title">Honeynet Deployment</h3>
+              <p class="card-description">Deployed a honeynet using MHN-Admin with three honeypots: Dionaea for malware capture, Snort for network intrusion detection and traffic analysis, and p0f for passive OS fingerprinting of remote hosts.</p>
+              <div class="card-tags">
+                <span>MHN-Admin</span><span>Dionaea</span><span>Snort</span><span>Networking</span>
               </div>
             </div>
           </article>
 
           <!-- Project 4 -->
-          <article class="work-card aos">
-            <div class="work-card-image scale-on-hover">
-              <img src="assets/img/fedex1.png" alt="FedEx" loading="lazy">
+          <article class="project-card stagger-item">
+            <div class="card-media">
+              <img src="assets/img/fedex1.png" alt="FedEx dropbox diagnostics" loading="lazy">
             </div>
-            <div class="work-card-content">
-              <h3 class="h5">fedex tools</h3>
-              <p class="text-sm">Internal tooling and automation solutions developed during my tenure at FedEx. Improved operational efficiency for package tracking and logistics workflows.</p>
-              <div class="work-card-tags">
-                <span class="tag">Java</span>
-                <span class="tag">Spring</span>
-                <span class="tag">REST</span>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Frontend Development</span>
+                <span class="card-year">2021</span>
+              </div>
+              <h3 class="card-title">FedEx Dropbox Diagnostics</h3>
+              <p class="card-description">Front-end interface for displaying dropbox diagnostics — insights into utilization, maintenance conditions, and usage patterns. Leverages real-time FedEx data to identify over/underutilized boxes and maintenance needs.</p>
+              <div class="card-tags">
+                <span>JavaScript</span><span>Frontend</span><span>Data Viz</span><span>FedEx</span>
               </div>
             </div>
           </article>
@@ -202,145 +211,189 @@
 
     <!-- ─── PARALLAX DIVIDER ─── -->
     <section class="parallax-divider" aria-hidden="true">
+      <div class="parallax-bg" style="background-image: url('assets/img/wood-bg.jpg')"></div>
       <div class="parallax-overlay"></div>
-      <div class="parallax-content uchi-container">
-        <p class="eyebrow">precision in every detail</p>
+      <div class="container parallax-content">
+        <div class="anim-line anim-line-light"></div>
       </div>
     </section>
 
     <!-- ─── EXPERIENCE ─── -->
-    <section id="experience" class="uchi-experience">
-      <div class="uchi-container">
-        <div class="section-header">
-          <p class="eyebrow aos">experience</p>
-          <h2 class="h3 anim-lines">the journey so far</h2>
-        </div>
+    <section id="experience" class="section section-alt">
+      <div class="container">
+        <p class="section-label stagger-item">Experience</p>
+        <h2 class="section-title stagger-item">the journey so far.</h2>
 
         <div class="timeline">
-          <article class="timeline-item aos">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <p class="eyebrow">2024 — present</p>
-              <h3 class="h5">hai hospitality group</h3>
-              <p class="text-sm timeline-role">wordpress developer</p>
-              <p class="text-sm">Building and maintaining restaurant websites for Uchi, Uchiko, and Uchiba brands. Custom WordPress themes with GSAP animations, reservation integrations, and performance optimization.</p>
+          <div class="timeline-item stagger-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2023 — Present</span>
+              <h3 class="timeline-role">Software Developer</h3>
+              <p class="timeline-company">Central Service Association</p>
+              <p class="timeline-desc">Developing Customer Information Systems webapp using Java and Play framework for 250+ utility companies throughout the US.</p>
             </div>
-          </article>
+          </div>
 
-          <article class="timeline-item aos">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <p class="eyebrow">2023 — 2024</p>
-              <h3 class="h5">motel 6 / g6 hospitality</h3>
-              <p class="text-sm timeline-role">software developer</p>
-              <p class="text-sm">Developed enterprise mail management and internal communication tools serving 1,400+ properties across North America.</p>
+          <div class="timeline-item stagger-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2022 — 2023</span>
+              <h3 class="timeline-role">SailPoint Developer</h3>
+              <p class="timeline-company">Teklane Solutions Inc.</p>
+              <p class="timeline-desc">Developed customized SailPoint IdentityIQ solutions and integrated with ServiceNow for enterprise identity management.</p>
             </div>
-          </article>
+          </div>
 
-          <article class="timeline-item aos">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <p class="eyebrow">2022 — 2023</p>
-              <h3 class="h5">fedex</h3>
-              <p class="text-sm timeline-role">software engineer intern</p>
-              <p class="text-sm">Built internal automation tools and REST APIs for package tracking and logistics optimization. Worked with Java, Spring Boot, and microservices architecture.</p>
+          <div class="timeline-item stagger-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2022</span>
+              <h3 class="timeline-role">Teaching Assistant</h3>
+              <p class="timeline-company">Mississippi State University</p>
+              <p class="timeline-desc">TA for "Data Structure and Analysis of Algorithm" course. Created custom scripts to automate grading workflows.</p>
             </div>
-          </article>
+          </div>
 
-          <article class="timeline-item aos">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <p class="eyebrow">2019 — 2023</p>
-              <h3 class="h5">university of memphis</h3>
-              <p class="text-sm timeline-role">b.s. computer science</p>
-              <p class="text-sm">Graduated with focus on software engineering, cybersecurity, and web technologies. Active member of the ACM student chapter.</p>
+          <div class="timeline-item stagger-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2021</span>
+              <h3 class="timeline-role">Technical Support Specialist</h3>
+              <p class="timeline-company">Codepath.org</p>
+              <p class="timeline-desc">Supported 1,000+ cybersecurity students across 20+ US universities in web application penetration testing, navigating OWASP top 10 vulnerabilities and real-world challenges.</p>
             </div>
-          </article>
+          </div>
+
+          <div class="timeline-item stagger-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2020 — 2022</span>
+              <h3 class="timeline-role">B.S. Computer Science</h3>
+              <p class="timeline-company">Mississippi State University</p>
+              <p class="timeline-desc">Completed Bachelor in Computer Science with a Minor in Mathematics.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item stagger-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2018 — 2020</span>
+              <h3 class="timeline-role">Associate of Science</h3>
+              <p class="timeline-company">Northlake College</p>
+              <p class="timeline-desc">Began undergraduate education and completed Associate of Science degree.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ─── SKILLS ─── -->
-    <section id="skills" class="uchi-skills">
-      <div class="uchi-container">
-        <div class="section-header">
-          <p class="eyebrow aos">skills</p>
-          <h2 class="h3 anim-lines">tools of the craft</h2>
-        </div>
+    <section id="skills" class="section">
+      <div class="container">
+        <p class="section-label stagger-item">Skills</p>
+        <h2 class="section-title stagger-item">tools of the craft.</h2>
 
         <div class="skills-grid">
-          <div class="skill-group aos">
-            <h3 class="h6">languages</h3>
-            <ul class="skill-list has-link-anim">
-              <li>JavaScript / TypeScript</li>
+          <div class="skill-card stagger-item">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>Languages</h3>
+            <ul>
               <li>Python</li>
               <li>Java</li>
+              <li>C / C++</li>
+              <li>JavaScript</li>
               <li>PHP</li>
               <li>HTML / CSS / SCSS</li>
               <li>SQL</li>
             </ul>
           </div>
-          <div class="skill-group aos">
-            <h3 class="h6">frameworks</h3>
-            <ul class="skill-list has-link-anim">
-              <li>React / Next.js</li>
-              <li>Node.js / Express</li>
-              <li>Spring Boot</li>
+          <div class="skill-card stagger-item">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3>Frameworks</h3>
+            <ul>
+              <li>Flask / Django</li>
+              <li>React</li>
+              <li>Play Framework</li>
+              <li>Bootstrap</li>
+              <li>SailPoint IdentityIQ</li>
               <li>WordPress</li>
-              <li>GSAP / ScrollTrigger</li>
-              <li>Tailwind CSS</li>
             </ul>
           </div>
-          <div class="skill-group aos">
-            <h3 class="h6">tools &amp; platforms</h3>
-            <ul class="skill-list has-link-anim">
+          <div class="skill-card stagger-item">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Tools & Platforms</h3>
+            <ul>
               <li>Git / GitHub</li>
-              <li>Docker</li>
-              <li>AWS / Azure</li>
-              <li>Figma</li>
-              <li>CI/CD Pipelines</li>
-              <li>Linux / Shell</li>
+              <li>Kali Linux</li>
+              <li>Google Cloud</li>
+              <li>Wireshark / Burp Suite</li>
+              <li>Metasploit / SQLMap</li>
+              <li>ServiceNow</li>
             </ul>
           </div>
-          <div class="skill-group aos">
-            <h3 class="h6">practices</h3>
-            <ul class="skill-list has-link-anim">
-              <li>Responsive Design</li>
-              <li>Accessibility (WCAG)</li>
-              <li>Performance Optimization</li>
+          <div class="skill-card stagger-item">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Practices</h3>
+            <ul>
+              <li>Penetration Testing</li>
+              <li>Malware Analysis</li>
+              <li>Identity Management</li>
               <li>RESTful APIs</li>
-              <li>Agile / Scrum</li>
-              <li>Testing (Jest, Cypress)</li>
+              <li>Networking</li>
+              <li>OWASP Top 10</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ─── CONTACT / NEWSLETTER ─── -->
-    <section id="contact" class="ur-newsletter dark">
-      <div class="uchi-container">
-        <div class="newsletter-container">
-          <div class="newsletter-left">
-            <p class="eyebrow">let's connect</p>
-            <h2 class="h4 newsletter-title anim-lines">interested in working together?</h2>
-            <p class="text-md">Whether you have a project in mind, want to collaborate, or just want to say hello — I'd love to hear from you.</p>
+    <!-- ─── CONTACT ─── -->
+    <section id="contact" class="section section-dark">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-content">
+            <p class="section-label stagger-item">Let's Connect</p>
+            <h2 class="section-title stagger-item">interested in working together?</h2>
+            <p class="body-text stagger-item">Whether you have a project in mind, want to collaborate, or just want to say hello — I'd love to hear from you.</p>
+            <div class="contact-links stagger-item">
+              <a href="https://github.com/anjalgajurel" target="_blank" rel="noopener" class="contact-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://linkedin.com/in/anjalgajurel" target="_blank" rel="noopener" class="contact-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                <span>LinkedIn</span>
+              </a>
+              <a href="mailto:hello@anjalgajurel.com" class="contact-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span>Email</span>
+              </a>
+            </div>
           </div>
-          <div class="newsletter-right">
-            <form action="https://formspree.io/f/YOUR_ID" method="POST" class="contact-form has-material-form">
-              <div class="form-group">
-                <input type="text" id="name" name="name" required>
-                <label for="name">your name</label>
+          <div class="contact-form-wrapper">
+              <form action="https://formspree.io/f/mnqwkylq" method="POST" class="contact-form" id="contact-form">
+              <div class="form-field">
+                <input type="text" name="name" id="name" placeholder=" " required>
+                <label for="name">Your Name</label>
               </div>
-              <div class="form-group">
-                <input type="email" id="email" name="email" required>
-                <label for="email">your email</label>
+              <div class="form-field">
+                <input type="email" name="email" id="email" placeholder=" " required>
+                <label for="email">Your Email</label>
               </div>
-              <div class="form-group">
-                <textarea id="message" name="message" rows="4" required></textarea>
-                <label for="message">your message</label>
+              <div class="form-field">
+                <textarea name="message" id="message" rows="4" placeholder=" " required></textarea>
+                <label for="message">Your Message</label>
               </div>
-              <button type="submit" class="uchi-btn-bordered">send message</button>
+              <button type="submit" class="btn btn-primary btn-full">Send Message</button>
             </form>
           </div>
         </div>
@@ -350,39 +403,35 @@
   </main>
 
   <!-- ═══ FOOTER ═══ -->
-  <footer class="global-footer">
-    <div class="uchi-container">
-      <div class="footer-row">
-        <div class="footer-left">
-          <div class="footer-logo">
-            <img src="assets/img/ag-monogram.svg" alt="Anjal Gajurel">
-          </div>
-          <p class="footer-text text-sm">software engineer crafting digital experiences with intention and precision.</p>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-mark">AG</span>
+          <p>Software developer crafting solutions with curiosity and precision.</p>
         </div>
-        <div class="footer-right">
-          <div class="footer-nav">
-            <h4 class="h6">navigate</h4>
-            <ul class="has-link-anim">
-              <li><a href="#about">about</a></li>
-              <li><a href="#work">work</a></li>
-              <li><a href="#experience">experience</a></li>
-              <li><a href="#skills">skills</a></li>
-              <li><a href="#contact">contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-nav">
-            <h4 class="h6">connect</h4>
-            <ul class="has-link-anim">
-              <li><a href="https://github.com/anjalgajurel" target="_blank" rel="noopener">github</a></li>
-              <li><a href="https://linkedin.com/in/anjalgajurel" target="_blank" rel="noopener">linkedin</a></li>
-              <li><a href="mailto:hello@anjalgajurel.com">email</a></li>
-            </ul>
-          </div>
+        <div class="footer-links">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://github.com/anjalgajurel" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://linkedin.com/in/anjalgajurel" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="mailto:hello@anjalgajurel.com">Email</a></li>
+          </ul>
         </div>
       </div>
-    </div>
-    <div class="below-footer uchi-container">
-      <p class="text-xs">&copy; 2025 Anjal Gajurel. All rights reserved.</p>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Anjal Gajurel. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
@@ -392,14 +441,12 @@
       <path class="progress-bg" d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" fill="none" stroke-width="3"/>
       <path class="progress-path" d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" fill="none" stroke-width="3"/>
     </svg>
-    <svg class="progress-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M8 13V3M3 8l5-5 5 5"/>
+    <svg class="progress-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M7 12V2M2 7l5-5 5 5"/>
     </svg>
   </div>
 
-  <!-- Screen reader live region -->
   <div id="sr-status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
-
-  <script src="assets/js/site.js"></script>
+  <script src="assets/js/site.js" defer></script>
 </body>
 </html>
